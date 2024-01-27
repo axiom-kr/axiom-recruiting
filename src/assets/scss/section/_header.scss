@@ -1,0 +1,120 @@
+#header {
+  @include position-fixed;
+  z-index: 10000;
+}
+.header__inner {
+  @include flex-between;
+  padding: 0.3rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+
+  .header__period {
+    font-weight: 600;
+    overflow: hidden;
+    & > span {
+      display: inline-block;
+    }
+  }
+  .header__logo {
+    font-size: 0.9rem;
+    font-weight: 900;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 1;
+    em {
+      color: #ff6200;
+    }
+    overflow: hidden;
+  }
+  .header__nav {
+    ul {
+      overflow: hidden;
+    }
+    li {
+      display: inline-block;
+      font-size: 14px;
+
+      span.marker {
+        position: relative;
+        padding-left: 8px;
+        font-size: 10px;
+        bottom: 3px;
+      }
+
+      a {
+        text-transform: uppercase;
+        padding-right: 10px;
+        padding-left: 6px;
+        font-weight: 600;
+        position: relative;
+
+        &::before {
+          content: "";
+          width: calc(100% - 20px);
+          height: 1px;
+          background-color: var(--black);
+          position: absolute;
+          left: 6px;
+          bottom: -2px;
+          transform-origin: 0%;
+          transform: scaleX(0);
+          transition: all 0.3s;
+        }
+        &:hover::before {
+          transform: scaleX(1);
+        }
+      }
+    }
+  }
+
+  .header__nav__hamburger {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+
+    span {
+      display: block;
+      width: 40px;
+      height: 2px;
+      background-color: var(--black);
+      margin-top: 17px;
+      position: relative;
+
+      &::before {
+        content: "";
+        width: 40px;
+        height: 4px;
+        background-color: var(--black);
+        position: absolute;
+        right: 0;
+        top: 6px;
+        transition: width 0.3s;
+      }
+      &::after {
+        content: "";
+        width: 40px;
+        height: 1px;
+        background-color: var(--black);
+        position: absolute;
+        left: 0;
+        bottom: 6px;
+        transition: width 0.3s;
+      }
+    }
+  }
+}
+.header__bottom {
+  height: 1px;
+  background-color: black;
+  animation-name: left-to-right;
+  animation-duration: 2s;
+}
+
+@keyframes left-to-right {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
