@@ -83,3 +83,25 @@ img {
   vertical-align: top;
   width: 100%;
 }
+
+body{
+  -ms-overflow-style: none;
+  }
+  
+::-webkit-scrollbar {
+  display: none;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.self-start {
+  display: flex;
+  align-self: start;
+}
+
+.self-end {
+  display: flex;
+  align-self: end;
+}

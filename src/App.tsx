@@ -5,18 +5,25 @@ import About from "./pages/About";
 import Program from "./pages/Program";
 import JoinUs from "./pages/JoinUs";
 import Contact from "./pages/Contact";
+import Menu from "./pages/Menu";
+
+import SmoothScroll from "./utils/SmoothScroll";
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/recruit" element={<JoinUs />} />
-        <Route path="/program" element={<Program />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
-    </BrowserRouter>
+    <SmoothScroll>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/recruit" element={<JoinUs />} />
+          <Route path="/program" element={<Program />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/menu" element={<Menu />} />
+        </Routes>
+      </BrowserRouter>
+    </SmoothScroll>
+    
   );
 };
 

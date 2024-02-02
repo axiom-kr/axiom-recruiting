@@ -36,6 +36,7 @@ const HeaderInner = () => {
           { opacity: 1, duration: 0.5, delay: 1.4 }
         );
     });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -75,17 +76,19 @@ const HeaderInner = () => {
           </li>
         </ul>
       </nav>
-      <div
-        className="header__nav__hamburger"
-        id="headerToggle"
-        aria-controls="primary-menu"
-        aria-expanded="false"
-        role="button"
-        tabIndex={0}
-        ref={burgerRef}
-      >
-        <span></span>
-      </div>
+        <div
+          className="header__nav__hamburger"
+          id="headerToggle"
+          aria-controls="primary-menu"
+          aria-expanded="false"
+          role="button"
+          tabIndex={0}
+          ref={burgerRef}
+        >
+          <Link to={"/menu"}>
+            <span></span>
+          </Link>
+        </div>
     </div>
   );
 };
