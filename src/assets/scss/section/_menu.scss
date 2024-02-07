@@ -1,0 +1,74 @@
+#menu {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  width: 100%;
+  height: 100vh;
+  background-color: #222;
+
+  .menu__container {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: stretch;
+    background-color: white;
+
+    .menu__list {
+      list-style-type: none;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+
+      li {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-top: 2px solid #fff;
+        border-bottom: 2px solid #000;
+        padding: 0 20px;
+
+        &:first-child {
+          border-top: none;
+        }
+
+        a {
+          text-decoration: none;
+          color: #000;
+          font-size: 4rem;
+          transition: background-color 0.3s ease;
+        }
+        &:hover {
+          background-color: #555; // 호버 시 색상 변경
+        }
+      }
+    }
+  }
+
+  .logo__container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+  }
+}
+#menu__title {
+  display: flex;
+  align-items: baseline;
+  margin-top: 0;
+  .title__h1 {
+    font-size: 8vw;
+    font-weight: 900;
+    em {
+      color: #ff6200;
+    }
+  }
+  .title__span {
+    font-family: "espiritu-script";
+    font-size: 2vw;
+  }
+}
